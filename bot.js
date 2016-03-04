@@ -16,6 +16,34 @@ var bot = controller.spawn({
     token: process.env.token
 }).startRTM();
 
+// athingaweek related messages
+// consider reading deadline and project data from storage in the future
+
+controller.hears(['!deadline'],'ambient',function(bot, message) {
+
+    controller.storage.users.get(message.user,function(err, user) {
+        if (user && user.name) {
+            bot.reply(message,'Hi ' + user.name + ', the deadline for this weeks project is 3/6/2016');
+        } else {
+            bot.reply(message,'Hi, the deadline for this weeks project is 3/6/2016.  By the way, did you know you can request I refer to you as a custom name?  Just type /call me insert_name_here');
+        }
+    });
+
+    
+});
+
+controller.hears(['!project'],'ambient',function(bot, message) {
+
+    controller.storage.users.get(message.user,function(err, user) {
+        if (user && user.name) {
+            bot.reply(message,'Hi ' + user.name + ', this weeks project is to build a site for a digital agency looking to attract new clients');
+        } else {
+            bot.reply(message,'Hi, this weeks project is to build a site for a digital agency looking to attract new clients.  By the way, did you know you can request I refer to you as a custom name?  Just type /call me insert_name_here');
+        }
+    });
+
+});
+
 
 controller.hears(['hello','hi'],'direct_message,direct_mention,mention',function(bot, message) {
 
