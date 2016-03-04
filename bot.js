@@ -25,7 +25,7 @@ controller.hears(['!deadline'],'ambient',function(bot, message) {
         if (user && user.name) {
             bot.reply(message,'Hi ' + user.name + ', the deadline for this weeks project is 3/6/2016');
         } else {
-            bot.reply(message,'Hi, the deadline for this weeks project is 3/6/2016.  By the way, did you know you can request I refer to you as a custom name?  Just type /call me insert_name_here');
+            bot.reply(message,'Hi, the deadline for this weeks project is 3/6/2016.  By the way, did you know you can request I refer to you as a custom name?  Just address me then type call me insert_name_here');
         }
     });
 
@@ -38,7 +38,7 @@ controller.hears(['!project'],'ambient',function(bot, message) {
         if (user && user.name) {
             bot.reply(message,'Hi ' + user.name + ', this weeks project is to build a site for a digital agency looking to attract new clients');
         } else {
-            bot.reply(message,'Hi, this weeks project is to build a site for a digital agency looking to attract new clients.  By the way, did you know you can request I refer to you as a custom name?  Just type /call me insert_name_here');
+            bot.reply(message,'Hi, this weeks project is to build a site for a digital agency looking to attract new clients.  By the way, did you know you can request I refer to you as a custom name?  Just address me then type call me insert_name_here');
         }
     });
 
